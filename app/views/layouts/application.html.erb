@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="ui purple inverted menu attached">
+  <div class="wrap">
+  	<a class="item">
+  	  <p class="navfont">书香满屋</p>
+    </a>
+    <a class="item root-icon" href="/">
+      <i class="list icon"></i><p class="smallfont">书单</p>
+    </a>
+  </div>
+</div>
+
+<div class="main">
+  <div class="sep20"></div>
+  <div class="wrap">
+    <%= yield %>
+  </div>
+</div>
+
+</body>
+</html>

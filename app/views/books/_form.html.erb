@@ -1,0 +1,20 @@
+<%= simple_form_for(@book) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="ui form">
+    <%= f.input :title, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :author, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :country, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :translator, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :publisher, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :ISBN, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :number, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :price, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :rec_date, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :info, wrapper_html: { class: 'inline field' } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => "small ui purple button" %>
+  </div>
+<% end %>

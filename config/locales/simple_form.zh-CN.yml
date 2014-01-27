@@ -1,0 +1,28 @@
+zh-CN:
+  title: '书名'
+  author: '作者'
+  country: '国家'
+  translator: '译者'
+  publisher: '出版社'
+  number: '数量'
+  price: '价格'
+  rec_date: '入库时间'
+  show: '详情'
+  edit: '修改'
+  destroy: '删除'
+  new book: '新增书'
+  Back: '返回'
+  activerecord:
+    models:
+      book: '书'
+    attributes:
+      book:
+        title: '书名'
+        author: '作者'
+        country: '国家'
+        translator: '译者'
+        publisher: '出版社'
+        number: '数量'
+        price: '价格'
+        rec_date: '入库时间'
+        info: '备注'       
