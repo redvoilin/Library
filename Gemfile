@@ -45,6 +45,14 @@ gem 'semantic-ui-rails'
 
 gem 'devise'
 
+gem "cancan"
+
+gem 'carrierwave'
+
+gem 'pry'
+
+gem 'kaminari'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

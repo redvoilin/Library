@@ -50,3 +50,41 @@ body {
 .sep20 {
 	height: 20px;
 }
+
+.right {
+	float: right;
+}
+
+.item {
+	border-top: 1px solid rgba(0,0,0,0.1);
+	padding: 0.5em 0em;
+}
+
+.item:first-child {
+	border-top-width: 0px;
+    padding-top: 0px;
+}
+
+.image {
+	display: inline-block;
+}
+
+.content {
+	display: inline-block;
+	margin-left: 15px;
+	vertical-align: top;
+}
+
+a {
+	color: #4d4d4d;
+	text-decoration: none;
+}
+
+.info {
+	font-size: 13px;
+	margin-top: 5px;
+}
+
+.info div {
+	margin: 8px 0px;
+}

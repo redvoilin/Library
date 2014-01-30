@@ -1,36 +1,36 @@
-
-<table class="ui table segment">
-  <thead>
-    <tr>
-      <th><%= t "title" %></th>
-      <th><%= t "author" %></th>
-      <th><%= t "country" %></th>
-      <th><%= t "publisher" %></th>
-      <th><%= t "number" %></th>
-      <th><%= t "rec_date" %></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="ui grid">
+  <div class="ui ten wide column segment">
+      <div class="item">
+        选择类别：
+          <%= select_tag "category",options_from_collection_for_select(@category, "id", "title") %>
+      </div>
     <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
-        <td><%= book.country %></td>
-        <td><%= book.publisher %></td>
-        <td><%= book.number %></td>
-        <td><%= book.rec_date %></td>
-        <td><%= link_to t('show'), book %></td>
-        <td><%= link_to t('edit'), edit_book_path(book) %></td>
-        <td><%= link_to t('destroy'), book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="item">
+        <div class="image">
+          <%= image_tag book.image_url, width: "100" %>
+        </div>
+        <div class="content">
+          <div>
+            <%= link_to book.title, book %>
+          </div>
+          <div class="info">
+            <div>作者：<%= book.author %></div>
+            <div>评分：
+              <div class="ui star rating">
+                <%= raw set_star book.average %>
+              </div>
+              <%= book.average %>分
+            </div>
+            <div>
+              类别：<%= book.category.title %>
+            </div>
+            <div>
+              状态：<%= convert_status book.number %>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to t('new book'), new_book_path, :class => "small ui purple button" %>
+    <%= paginate @books %>
+  </div>
+</div>

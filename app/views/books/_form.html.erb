@@ -10,7 +10,15 @@
     <%= f.input :ISBN, wrapper_html: { class: 'inline field' } %>
     <%= f.input :number, wrapper_html: { class: 'inline field' } %>
     <%= f.input :price, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :average, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :pubdate, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :pages, wrapper_html: { class: 'inline field' } %>
+    <%= f.association :category, wrapper_html: { class: 'inline field' } %>
     <%= f.input :rec_date, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :image_url, as: :file, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :catalog, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :author_intro, wrapper_html: { class: 'inline field' } %>
+    <%= f.input :summary, wrapper_html: { class: 'inline field' } %>
     <%= f.input :info, wrapper_html: { class: 'inline field' } %>
   </div>
 

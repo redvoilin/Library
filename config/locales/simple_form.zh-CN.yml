@@ -5,6 +5,7 @@ zh-CN:
   translator: '译者'
   publisher: '出版社'
   number: '数量'
+  category: '类别'
   price: '价格'
   rec_date: '入库时间'
   show: '详情'
@@ -15,6 +16,7 @@ zh-CN:
   activerecord:
     models:
       book: '书'
+      category: '类别'
     attributes:
       book:
         title: '书名'
@@ -25,4 +27,12 @@ zh-CN:
         number: '数量'
         price: '价格'
         rec_date: '入库时间'
-        info: '备注'       
+        info: '备注' 
+        category: '类别'
+        catalog: '目录'
+        author_intro: '作者简介'
+        summary: '概述'
+        image_url: '图片'
+        pubdate: '出版日期'
+        pages: '页数'
+        average: '评分'
