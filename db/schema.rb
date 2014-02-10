@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129031424) do
+ActiveRecord::Schema.define(version: 20140210052550) do
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -42,6 +42,12 @@ ActiveRecord::Schema.define(version: 20140129031424) do
     t.datetime "updated_at"
   end
 
+  create_table "departments", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -57,10 +63,20 @@ ActiveRecord::Schema.define(version: 20140129031424) do
     t.datetime "updated_at"
     t.boolean  "admin",                  default: false
     t.string   "username"
+    t.integer  "department_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true
+
+  create_table "users_books", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.integer  "status"
+    t.date     "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

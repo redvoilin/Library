@@ -1,8 +1,14 @@
 Library::Application.routes.draw do
+  resources :departments
+
   resources :categories
 
   devise_for :users
-  resources :books
+  resources :books do
+    collection do
+      get 'borrow'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -12,9 +12,12 @@
   	<a class="item">
   	  <p class="navfont">书香满屋</p>
     </a>
-    <a class="item root-icon" href="/">
+    <%= link_to(books_path,:class => "item root-icon") do  %>
       <i class="list icon"></i><p class="smallfont">书单</p>
-    </a>
+    <% end %>
+    <%= link_to(borrow_books_path,:class => "item root-icon") do  %>
+      <p class="smallfont">借书</p>
+    <% end %>
     <div class="right menu">
       <% if !user_signed_in? %>
         <%= link_to "登录",new_user_session_path, class: "item" %>

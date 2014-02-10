@@ -1,36 +1,5 @@
 <div class="ui grid">
-  <div class="ui ten wide column segment">
-      <div class="item">
-        选择类别：
-          <%= select_tag "category",options_from_collection_for_select(@category, "id", "title") %>
-      </div>
-    <% @books.each do |book| %>
-      <div class="item">
-        <div class="image">
-          <%= image_tag book.image_url, width: "100" %>
-        </div>
-        <div class="content">
-          <div>
-            <%= link_to book.title, book %>
-          </div>
-          <div class="info">
-            <div>作者：<%= book.author %></div>
-            <div>评分：
-              <div class="ui star rating">
-                <%= raw set_star book.average %>
-              </div>
-              <%= book.average %>分
-            </div>
-            <div>
-              类别：<%= book.category.title %>
-            </div>
-            <div>
-              状态：<%= convert_status book.number %>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-    <%= paginate @books %>
+  <div class="ui ten wide column segment" id="books_list" >
+    <%= render "books_list" %>
   </div>
 </div>

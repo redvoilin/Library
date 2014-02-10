@@ -4,8 +4,14 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.page(params[:page]).per(20)
+    @books = Book.get_books params[:page],params[:category].to_i
     @category = Category.all
+    @category_id = params[:category]
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /books/1
@@ -56,10 +62,15 @@ class BooksController < ApplicationController
   # DELETE /books/1.json
   def destroy
     @book.destroy
+
     respond_to do |format|
       format.html { redirect_to books_url }
       format.json { head :no_content }
     end
+  end
+
+  def borrow
+    
   end
 
   private
