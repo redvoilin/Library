@@ -1,4 +1,6 @@
 Library::Application.routes.draw do
+  root 'books#index'
+
   resources :departments
 
   resources :categories

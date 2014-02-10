@@ -1,55 +1,65 @@
-<div class="ui segment">
-  <div class="ui teal ribbon label">详情</div>
-  <div class="center">
-    <p id="notice"><%= notice %></p>
-
-<p>
-  <strong><%= t "title" %>:</strong>
-  <%= @book.title %>
-</p>
-
-<p>
-  <strong><%= t "author" %>:</strong>
-  <%= @book.author %>
-</p>
-
-<p>
-  <strong><%= t "country" %>:</strong>
-  <%= @book.country %>
-</p>
-
-<p>
-  <strong><%= t "translator" %>:</strong>
-  <%= @book.translator %>
-</p>
-
-<p>
-  <strong><%= t 'publisher' %>:</strong>
-  <%= @book.publisher %>
-</p>
-
-<p>
-  <strong>Isbn:</strong>
-  <%= @book.ISBN %>
-</p>
-
-<p>
-  <strong><%= t "number" %>:</strong>
-  <%= @book.number %>
-</p>
-
-<p>
-  <strong><%= t "price" %>:</strong>
-  <%= @book.price %>
-</p>
-
-<p>
-  <strong><%= t "rec_date" %>:</strong>
-  <%= @book.rec_date %>
-</p>
-
+<div class="ui grid">
+  <div class="ui eleven wide column">
+    <div class="ui segment">
+      <div class="ui teal ribbon label">详情</div>
+      <div class="center">
+        <p id="notice"><%= notice %></p>
+        <%= image_tag @book.image_url, width: "200" %>
+        <p>
+          <strong><%= t "title" %>:</strong>
+          <%= @book.title %>
+        </p>
+        <p>
+          <strong><%= t "author" %>:</strong>
+          <%= @book.author %>
+        </p>
+        <p>
+          <strong><%= t "country" %>:</strong>
+          <%= @book.country %>
+        </p>
+        <p>
+          <strong><%= t "translator" %>:</strong>
+          <%= @book.translator %>
+        </p>
+        <p>
+          <strong><%= t 'publisher' %>:</strong>
+          <%= @book.publisher %>
+        </p>
+        <p>
+          <strong>Isbn:</strong>
+          <%= @book.ISBN %>
+        </p>
+        <p>
+          <strong><%= t "number" %>:</strong>
+          <%= @book.number %>
+        </p>
+        <p>
+          <strong><%= t "price" %>:</strong>
+          <%= @book.price %>
+        </p>
+        <p>
+          <strong><%= t "rec_date" %>:</strong>
+          <%= @book.rec_date %>
+        </p>
+        <p>
+          <strong><%= t "category" %>:</strong>
+          <%= @book.category.title %>
+        </p>
+        <p>
+          <strong><%= t "pages" %>:</strong>
+          <%= @book.pages %>
+        </p>
+        <p>
+          <strong><%= t "author_intro" %>:</strong>
+          <%= @book.author_intro %>
+        </p>
+        <p>
+          <strong><%= t "summary" %>:</strong>
+          <%= @book.summary %>
+        </p>
+        <%= simple_form  %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
