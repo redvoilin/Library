@@ -53,6 +53,8 @@ gem 'pry'
 
 gem 'kaminari'
 
+gem 'rails4-autocomplete'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

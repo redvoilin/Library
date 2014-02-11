@@ -56,8 +56,27 @@
         <p>
           <strong><%= t "summary" %>:</strong>
           <%= @book.summary %>
-        </p>
-
+        </p>  
+        <%= form_tag("borrow",method: "post",remote: true) do %>
+        <div class="ui form">
+          <div class="field">
+            <%= text_field_tag(:book,@book.id,hidden: "hidden") %>
+          </div>
+          <div class="field">
+            <%= label_tag("用户：") %>
+            <%= autocomplete_field_tag(:user,'', users_autocomplete_user_username_path) %>
+          </div>
+          <div class="field">
+            <%= label_tag("借阅天数：") %>
+            <%= text_field_tag(:days,"15") %>
+          </div>
+          <div class="field">
+            <%= label_tag("书况：") %>
+            <%= text_area_tag(:info) %>
+          </div>
+          <%= submit_tag"借 阅",:class => "small ui purple button" %>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -5,12 +5,15 @@ Library::Application.routes.draw do
 
   resources :categories
 
-  devise_for :users
+  devise_for :users, :controllers => { :sessions => "admins/sessions" }
+
   resources :books do
     collection do
-      get 'borrow'
+      post 'borrow'
     end
   end
+
+  get 'users/autocomplete_user_username'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
