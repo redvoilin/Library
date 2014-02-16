@@ -70,7 +70,11 @@ class BooksController < ApplicationController
   end
 
   def borrow
-    
+    @result = Book.borrow_book params
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

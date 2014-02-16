@@ -10,4 +10,23 @@ class Book < ActiveRecord::Base
   	  Book.where("category_id = ?",category).page(page).order("average desc")
   	end
   end
+
+  def self.borrow_book params
+    user = User.find_by_username(params[:user])
+    if user
+      borrow_record = BorrowRecord.new
+      borrow_record.user_id = user.id
+      borrow_record.book_id = params[:book]
+      borrow_record.status = 2
+      borrow_record.return_date = Date.today + params[:days].to_i
+      borrow_record.info = params[:info]
+      if borrow_record.save
+        "success"
+      else
+        "failed"
+      end
+    else
+      "user not found"
+    end
+  end
 end

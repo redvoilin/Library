@@ -13,7 +13,7 @@ Library::Application.routes.draw do
     end
   end
 
-  get 'users/autocomplete_user_username'
+  # get 'users/autocomplete_user_username'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

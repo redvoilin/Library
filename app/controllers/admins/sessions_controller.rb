@@ -1,3 +1,3 @@
 class Admins::SessionsController < Devise::SessionsController
-  autocomplete :user, :username
+  # autocomplete :user, :username
 end
