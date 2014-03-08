@@ -1,0 +1,17 @@
+<div class="ui grid">
+  <div class="ui wide column">
+    <div class="ui segment">
+      <div class="item">
+	    <%= form_tag("borrow",method: "post",remote: true) do %>
+          <div class="ui form">
+            <div class="inline field">
+              <%= label_tag("用户：") %>
+              <%= text_field_tag(:user) %>
+              <%= submit_tag"查询",:class => "small ui purple button" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

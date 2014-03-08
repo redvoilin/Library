@@ -15,8 +15,10 @@
     <%= link_to(books_path,:class => "item root-icon") do  %>
       <i class="list icon"></i><p class="smallfont">书单</p>
     <% end %>
-    <%= link_to(borrow_books_path,:class => "item root-icon") do  %>
-      <p class="smallfont">还书</p>
+    <% if can? :operate,Book %>
+      <%= link_to(operate_books_path,:class => "item root-icon") do  %>
+        <p class="smallfont">还书</p>
+      <% end %>
     <% end %>
     <div class="right menu">
       <% if !user_signed_in? %>

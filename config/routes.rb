@@ -10,6 +10,7 @@ Library::Application.routes.draw do
   resources :books do
     collection do
       post 'borrow'
+      get 'operate'
     end
   end
 
