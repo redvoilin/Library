@@ -29,4 +29,13 @@ class Book < ActiveRecord::Base
       "user not found"
     end
   end
+
+  def self.get_borrowrecords params
+    user = User.find_by_username(params[:user])
+    if user
+      user.borrow_records
+    else
+
+    end
+  end
 end

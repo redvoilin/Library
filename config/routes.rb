@@ -11,6 +11,7 @@ Library::Application.routes.draw do
     collection do
       post 'borrow'
       get 'operate'
+      post 'get_borrowrecords'
     end
   end
 

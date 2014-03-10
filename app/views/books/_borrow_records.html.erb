@@ -1,0 +1,18 @@
+<thead>
+  <tr>
+    <th>借书人</th>
+    <th>书名</th>
+    <th>借书日期</th>
+    <th>还书日期</th>
+  </tr>
+</thead>
+<tbody>
+  <% @borrow_records.each do |borrow_record| %>
+    <tr>
+      <td><%= borrow_record.user.username %></td>
+      <td><%= borrow_record.book.title %></td>
+      <td><%= borrow_record.created_at %></td>
+      <td><%= borrow_record.return_date %></td>
+    </tr>
+  <% end %>
+</tbody>

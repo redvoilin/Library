@@ -2,7 +2,7 @@
   <div class="ui wide column">
     <div class="ui segment">
       <div class="item">
-	    <%= form_tag("borrow",method: "post",remote: true) do %>
+	      <%= form_tag("get_borrowrecords",method: "post",remote: true) do %>
           <div class="ui form">
             <div class="inline field">
               <%= label_tag("用户：") %>
@@ -11,6 +11,8 @@
             </div>
           </div>
         <% end %>
+        <table class="ui five column table segment" id="borrowrecords_table">
+        </table>
       </div>
     </div>
   </div>
