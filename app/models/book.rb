@@ -17,10 +17,19 @@ class Book < ActiveRecord::Base
       borrow_record = BorrowRecord.new
       borrow_record.user_id = user.id
       borrow_record.book_id = params[:book]
-      borrow_record.status = 2
+      borrow_record.status = 1
       borrow_record.return_date = Date.today + params[:days].to_i
       borrow_record.info = params[:info]
-      if borrow_record.save
+
+      book = self.find(params[:book])
+      book.number -= 1
+
+      self.transaction do
+        borrow_savestate = borrow_record.save!
+        book_savestate = book.save!
+      end
+
+      if borrow_savestate and book_savestate
         "success"
       else
         "failed"
@@ -33,9 +42,19 @@ class Book < ActiveRecord::Base
   def self.get_borrowrecords params
     user = User.find_by_username(params[:user])
     if user
-      user.borrow_records
+      user.borrow_records.where("status != ?",3)
     else
 
+    end
+  end
+
+  def return_book borrowrecord_id
+    record = BorrowRecord.find(borrowrecord_id)
+    record.status = 3
+    if record.save
+      "success"
+    else
+      "failed"
     end
   end
 end

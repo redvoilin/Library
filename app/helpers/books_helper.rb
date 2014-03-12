@@ -24,4 +24,12 @@ module BooksHelper
       'item'
     end
   end
+
+  def show_borrowrecord_state status
+    case status
+      when 1 then "在借中"
+      when 2 then "续借中"
+      when 3 then "归还"
+    end
+  end
 end

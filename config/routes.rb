@@ -12,6 +12,7 @@ Library::Application.routes.draw do
       post 'borrow'
       get 'operate'
       post 'get_borrowrecords'
+      post 'return_book'
     end
   end
 
