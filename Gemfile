@@ -53,8 +53,7 @@ gem 'pry'
 
 gem 'kaminari'
 
-gem 'rails3-jquery-autocomplete'
-
+gem 'semantic-ui-sass', '~> 0.15.1.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

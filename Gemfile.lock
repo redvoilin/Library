@@ -98,8 +98,6 @@ GEM
     rails-i18n (4.0.1)
       i18n (~> 0.6)
       rails (~> 4.0)
-    rails3-jquery-autocomplete (1.0.12)
-      rails (>= 3.0)
     railties (4.0.3)
       actionpack (= 4.0.3)
       activesupport (= 4.0.3)
@@ -120,6 +118,8 @@ GEM
     semantic-ui-rails (0.12.5)
       autoprefixer-rails
       less-rails
+    semantic-ui-sass (0.15.1.0)
+      sass (~> 3.2)
     simple_form (3.0.1)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
@@ -170,10 +170,10 @@ DEPENDENCIES
   pry
   rails (= 4.0.3)
   rails-i18n (~> 4.0.0)
-  rails3-jquery-autocomplete
   sass-rails (~> 4.0.0)
   sdoc
   semantic-ui-rails
+  semantic-ui-sass (~> 0.15.1.0)
   simple_form
   sqlite3
   therubyracer
